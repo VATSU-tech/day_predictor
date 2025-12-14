@@ -8,7 +8,23 @@
     <title>day_predictor</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <h1>Predire le jour suivant</h1>
+      <select name="day" id="day">
+        <option value="0">Dimanche</option>
+        <option value="1">Lundi</option>
+        <option value="2">Mardi</option>
+        <option value="3">Mercredi</option>
+        <option value="4">Jeudi</option> 
+        <option value="5">Vendredi</option>
+        <option value="6">Samedi</option>
+      </select>
+      <button>Predir</button>
+      <div class="loading" id="loading">
+        <div class="loader"></div>
+        <p id="chargement"></p>
+      </div>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
