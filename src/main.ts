@@ -10,7 +10,11 @@ const fakeStatuses = [
   "Décryptage des flux temporels...",
   "Analyse des anomalies quantiques...", 
   "Synchronisation des horloges atomiques...",
-  "Extraction de la date cible..."
+  "Extraction de la date cible...",
+  "Transfer des donnees au client...",
+  "Erreur lors du transfer des donnees...",
+  "Transfer des donnees au client...",
+  "Processus reussit."
 ];
 
 const fakeWords = [
@@ -32,7 +36,7 @@ startBtn.addEventListener("click", () => {
   let wordInterval = setInterval(() => {
     const randomWord = fakeWords[Math.floor(Math.random() * fakeWords.length)];
     wordsText.textContent = randomWord;
-  }, 300);
+  }, 500);
 
   let statusInterval = setInterval(() => {
     if (statusIndex < fakeStatuses.length) {
@@ -43,7 +47,7 @@ startBtn.addEventListener("click", () => {
       clearInterval(wordInterval);
       showResult();
     }
-  }, 1000);
+  }, 2000);
 });
 
 function showResult() {
@@ -54,11 +58,9 @@ function showResult() {
   const tomorrow = new Date(today);
   tomorrow.setDate(today.getDate() + 1);
 
-  const options = { weekday: "long" };
-
   result.innerHTML = `
-    <p>Jour actuel : <strong>${today.toLocaleDateString("fr-FR", options)}</strong></p>
-    <p>Jour prédit : <strong>${tomorrow.toLocaleDateString("fr-FR", options)}</strong></p>
+    <p>Jour actuel : <strong>${today.toLocaleDateString("fr-FR", { weekday: "long" })}</strong></p>
+    <p>Jour prédit : <strong>${tomorrow.toLocaleDateString("fr-FR", { weekday: "long" })}</strong></p>
     <p class="note">Prédiction validée par simulation temporelle.</p>
   `;
 }
