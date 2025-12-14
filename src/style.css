@@ -62,5 +62,10 @@ button:hover {
     box-shadow: 0 0 2rem #222, 0 0 1rem #ddd;
   }
 }
+#chargement {
+  max-width: 80%;
+  margin: 0 10%;
+  text-wrap: wrap;
+}
 
 /*# sourceMappingURL=style.css.map */
