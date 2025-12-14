@@ -1,6 +1,64 @@
-let load_contain = document.getElementById('chargement') as HTMLParagraphElement;
-const load_words = ['sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds','sdfsfsdfsfds']
+const startBtn = document.getElementById("startBtn") as HTMLButtonElement;
+const loader = document.getElementById("loader") as HTMLDivElement;
+const statusText = document.getElementById("status") as HTMLParagraphElement;
+const wordsText = document.getElementById("words") as HTMLParagraphElement;
+const result = document.getElementById("result") as HTMLDivElement;
 
-for( const w in load_words){
-    load_contain.textContent += ` ${load_words[w]}`
+const fakeStatuses = [
+  "Connexion au réseau satellite NASA...",
+  "Bypass des pare-feux orbitaux...",
+  "Décryptage des flux temporels...",
+  "Analyse des anomalies quantiques...", 
+  "Synchronisation des horloges atomiques...",
+  "Extraction de la date cible..."
+];
+
+const fakeWords = [
+  "ENCRYPTION_AES256",
+  "QUANTUM_NODE",
+  "TIME_VECTOR",
+  "ORBITAL_SYNC",
+  "NEURAL_HASH",
+  "TEMPORAL_KEY",
+  "DEEP_SCAN",
+  "SIGMA_PROTOCOL"
+];
+
+startBtn.addEventListener("click", () => {
+  startBtn.classList.add("hidden");
+  loader.classList.remove("hidden");
+
+  let statusIndex = 0;
+  let wordInterval = setInterval(() => {
+    const randomWord = fakeWords[Math.floor(Math.random() * fakeWords.length)];
+    wordsText.textContent = randomWord;
+  }, 300);
+
+  let statusInterval = setInterval(() => {
+    if (statusIndex < fakeStatuses.length) {
+      statusText.textContent = fakeStatuses[statusIndex];
+      statusIndex++;
+    } else {
+      clearInterval(statusInterval);
+      clearInterval(wordInterval);
+      showResult();
+    }
+  }, 1000);
+});
+
+function showResult() {
+  loader.classList.add("hidden");
+  result.classList.remove("hidden");
+
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(today.getDate() + 1);
+
+  const options = { weekday: "long" };
+
+  result.innerHTML = `
+    <p>Jour actuel : <strong>${today.toLocaleDateString("fr-FR", options)}</strong></p>
+    <p>Jour prédit : <strong>${tomorrow.toLocaleDateString("fr-FR", options)}</strong></p>
+    <p class="note">Prédiction validée par simulation temporelle.</p>
+  `;
 }

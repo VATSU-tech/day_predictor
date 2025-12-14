@@ -8,7 +8,7 @@
     <title>day_predictor</title>
   </head>
   <body>
-    <div id="app">
+    <!-- <div id="app">
       <h1>Predire le jour suivant</h1>
       <select name="day" id="day">
         <option value="0">Dimanche</option>
@@ -23,8 +23,24 @@
       <div class="loading" id="loading">
         <div class="loader"></div>
         <p id="chargement"></p>
+        <p id="result">le jour suivant <span id="day_now">Dimanche</span> est <span id="day_predict">Lundi</span></p>
       </div>
+    </div> -->
+      <div class="container">
+    <h1>ChronoPredict</h1>
+    <p class="subtitle">Module de prédiction temporelle avancée</p>
+
+    <button id="startBtn">Lancer la prédiction</button>
+
+    <div id="loader" class="hidden">
+      <div class="spinner"></div>
+      <p id="status">Initialisation des protocoles...</p>
+      <p id="words"></p>
     </div>
+
+    <div id="result" class="hidden"></div>
+  </div>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
