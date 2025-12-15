@@ -1,45 +1,36 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style.css">
-    <title>day_predictor</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <!-- <link rel="stylesheet" href="src/tailwind.css"> -->
+    <title>Day predictor</title>
   </head>
-  <body>
-    <!-- <div id="app">
+  <body> 
+    <div class="container">
       <h1>Predire le jour suivant</h1>
+      <p class="subtitle">Module de prédiction temporelle avancée</p>
       <select name="day" id="day">
         <option value="0">Dimanche</option>
         <option value="1">Lundi</option>
         <option value="2">Mardi</option>
         <option value="3">Mercredi</option>
-        <option value="4">Jeudi</option> 
+        <option value="4">Jeudi</option>
         <option value="5">Vendredi</option>
         <option value="6">Samedi</option>
       </select>
-      <button>Predir</button>
-      <div class="loading" id="loading">
-        <div class="loader"></div>
-        <p id="chargement"></p>
-        <p id="result">le jour suivant <span id="day_now">Dimanche</span> est <span id="day_predict">Lundi</span></p>
+      <button id="startBtn">Lancer la prédiction</button>
+
+      <div id="loader" class="hidden">
+        <div class="spinner"></div>
+        <p id="status">Initialisation des protocoles...</p>
+        <p id="words"></p>
       </div>
-    </div> -->
-      <div class="container">
-    <h1>ChronoPredict</h1>
-    <p class="subtitle">Module de prédiction temporelle avancée</p>
 
-    <button id="startBtn">Lancer la prédiction</button>
-
-    <div id="loader" class="hidden">
-      <div class="spinner"></div>
-      <p id="status">Initialisation des protocoles...</p>
-      <p id="words"></p>
+      <div id="result" class="hidden"></div>
     </div>
-
-    <div id="result" class="hidden"></div>
-  </div>
 
     <script type="module" src="/src/main.ts"></script>
   </body>

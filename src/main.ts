@@ -35,7 +35,41 @@ startBtn.addEventListener("click", () => {
   let statusIndex = 0;
   let wordInterval = setInterval(() => {
     const randomWord = fakeWords[Math.floor(Math.random() * fakeWords.length)];
-    wordsText.textContent = randomWord;
+    // wordsText.innerHTML += `<span>${randomWord}</span>`;
+    function afficherTableauLettreParLettre(
+    elements: string[],
+    container: HTMLElement,
+    vitesse: number = 100,
+    pauseEntreMots: number = 800
+): void {
+    let indexMot = 0;
+    let indexLettre = 0;
+
+    container.textContent = "";
+
+    function afficher(): void {
+        if (indexMot >= elements.length) {
+            return;
+        }
+
+        const motActuel = elements[indexMot];
+
+        if (indexLettre < motActuel.length) {
+            container.textContent += motActuel[indexLettre];
+            indexLettre++;
+            setTimeout(afficher, vitesse);
+        } else {
+            container.textContent += "\n";
+            indexMot++;
+            indexLettre = 0;
+            setTimeout(afficher, pauseEntreMots);
+        }
+    }
+
+    afficher();
+}
+
+afficherTableauLettreParLettre(fakeWords, wordsText);
   }, 500);
 
   let statusInterval = setInterval(() => {
@@ -45,7 +79,7 @@ startBtn.addEventListener("click", () => {
     } else {
       clearInterval(statusInterval);
       clearInterval(wordInterval);
-      showResult();
+      // showResult();
     }
   }, 2000);
 });

@@ -1,11 +1,13 @@
-// /* @import "tailwindcss"; */
+// @import "/src/tailwind.css";
+
+
 // :root{
 //     --bg: #222;
 //     --bgi: #ddd;
 //     --color: blue;
 // }
 
-// $bg : #222;
+// $bg : #222; 
 // $bgi: #ddd;
 // $color:blue;
 
@@ -95,9 +97,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   width: 90%;
   max-width: 500px;
@@ -113,17 +120,20 @@ h1 {
   margin-bottom: 20px;
 }
 
-button {
+
+button, select {
   background: #00e5ff;
   color: #050b1e;
   border: none;
   padding: 12px 20px;
+  margin: 10px 0;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 4px;
+  outline: none;
 }
 
-button:hover {
+button:hover,select:hover {
   background: #00ffa8;
 }
 
@@ -154,9 +164,13 @@ button:hover {
 }
 
 #words {
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
   font-size: 0.8rem;
   color: #ff3e7f;
-  height: 20px;
+  width: 80%; 
+  text-wrap: wrap;
 }
 
 #result {
