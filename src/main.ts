@@ -79,31 +79,22 @@ afficherTableauLettreParLettre(fakeWords, wordsText);
     } else {
       clearInterval(statusInterval);
       clearInterval(wordInterval);
-      // showResult();
+      showResult();
     }
   }, 200);
-});
+}); 
 
 function showResult() {
+  loader.classList.add("hidden");
+  result.classList.remove("hidden"); 
+
   const select = document.getElementById('select') as HTMLSelectElement;
   const today = select.options[select.selectedIndex].text;
   const tomorrow = Number(select.value) === 6 ?'Dimanche':select.options[select.selectedIndex + 1].text;
-  console.log(today, tomorrow)
+
+  result.innerHTML = `
+    <p>Jour actuel : <strong>${today}</strong></p>
+    <p>Jour prédit : <strong>${tomorrow}</strong></p>
+    <p class="note">Prédiction validée par simulation temporelle.</p>
+  `;
 }
-
-showResult()
-
-// function showResult() {
-//   loader.classList.add("hidden");
-//   result.classList.remove("hidden");
-
-//   const today = new Date();
-//   const tomorrow = new Date(today);
-//   tomorrow.setDate(today.getDate() + 1);
-
-//   result.innerHTML = `
-//     <p>Jour actuel : <strong>${today.toLocaleDateString("fr-FR", { weekday: "long" })}</strong></p>
-//     <p>Jour prédit : <strong>${tomorrow.toLocaleDateString("fr-FR", { weekday: "long" })}</strong></p>
-//     <p class="note">Prédiction validée par simulation temporelle.</p>
-//   `;
-// }
