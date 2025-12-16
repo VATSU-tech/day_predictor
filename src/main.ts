@@ -38,7 +38,7 @@ startBtn.addEventListener("click", () => {
   resetBtn.classList.add("hidden");
 
   document.querySelector<HTMLHeadingElement>('h1')!.textContent = "Prédiction en cours..."
-  document.querySelector<HTMLParagraphElement>('.subtitle')!.textContent = "Patienter pendant la connexion au serveur dela NASA..."
+  document.querySelector<HTMLParagraphElement>('.subtitle')!.textContent = "Patienter pendant la connexion au serveur..."
 
   let statusIndex = 0;
   let wordInterval = setInterval(() => {
@@ -89,7 +89,7 @@ startBtn.addEventListener("click", () => {
       clearInterval(wordInterval);
       showResult();
     }
-  }, 200);
+  }, 2000);
 });
 
 function showResult() {
