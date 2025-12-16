@@ -36,7 +36,7 @@ startBtn.addEventListener("click", () => {
 
   let statusIndex = 0;
   let wordInterval = setInterval(() => {
-    const randomWord = fakeWords[Math.floor(Math.random() * fakeWords.length)];
+    // const randomWord = fakeWords[Math.floor(Math.random() * fakeWords.length)];
     // wordsText.innerHTML += `<span>${randomWord}</span>`;
     function afficherTableauLettreParLettre(
       elements: string[],
