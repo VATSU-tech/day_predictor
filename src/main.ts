@@ -37,6 +37,9 @@ startBtn.addEventListener("click", () => {
   loader.classList.remove("hidden");
   resetBtn.classList.add("hidden");
 
+  document.querySelector<HTMLHeadingElement>('h1')!.textContent = "Prédiction en cours..."
+  document.querySelector<HTMLParagraphElement>('.subtitle')!.textContent = "Patienter pendant la connexion au serveur dela NASA"
+
   let statusIndex = 0;
   let wordInterval = setInterval(() => {
     const randomWord = fakeWords[Math.floor(Math.random() * fakeWords.length)];
