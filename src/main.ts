@@ -1,3 +1,4 @@
+const select = document.getElementById("select") as HTMLSelectElement;
 const startBtn = document.getElementById("startBtn") as HTMLButtonElement;
 const loader = document.getElementById("loader") as HTMLDivElement;
 const statusText = document.getElementById("status") as HTMLParagraphElement;
@@ -8,13 +9,13 @@ const fakeStatuses = [
   "Connexion au réseau satellite NASA...",
   "Bypass des pare-feux orbitaux...",
   "Décryptage des flux temporels...",
-  "Analyse des anomalies quantiques...", 
+  "Analyse des anomalies quantiques...",
   "Synchronisation des horloges atomiques...",
   "Extraction de la date cible...",
   "Transfer des donnees au client...",
   "Erreur lors du transfer des donnees...",
   "Transfer des donnees au client...",
-  "Processus reussit."
+  "Processus reussit.",
 ];
 
 const fakeWords = [
@@ -25,10 +26,11 @@ const fakeWords = [
   "NEURAL_HASH",
   "TEMPORAL_KEY",
   "DEEP_SCAN",
-  "SIGMA_PROTOCOL"
+  "SIGMA_PROTOCOL",
 ];
 
 startBtn.addEventListener("click", () => {
+  select.classList.add("hidden");
   startBtn.classList.add("hidden");
   loader.classList.remove("hidden");
 
@@ -37,39 +39,39 @@ startBtn.addEventListener("click", () => {
     const randomWord = fakeWords[Math.floor(Math.random() * fakeWords.length)];
     // wordsText.innerHTML += `<span>${randomWord}</span>`;
     function afficherTableauLettreParLettre(
-    elements: string[],
-    container: HTMLElement,
-    vitesse: number = 100,
-    pauseEntreMots: number = 800
-): void {
-    let indexMot = 0;
-    let indexLettre = 0;
+      elements: string[],
+      container: HTMLElement,
+      vitesse: number = 100,
+      pauseEntreMots: number = 800
+    ): void {
+      let indexMot = 0;
+      let indexLettre = 0;
 
-    container.textContent = "";
+      container.textContent = "";
 
-    function afficher(): void {
+      function afficher(): void {
         if (indexMot >= elements.length) {
-            return;
+          return;
         }
 
         const motActuel = elements[indexMot];
 
         if (indexLettre < motActuel.length) {
-            container.textContent += motActuel[indexLettre];
-            indexLettre++;
-            setTimeout(afficher, vitesse);
+          container.textContent += motActuel[indexLettre];
+          indexLettre++;
+          setTimeout(afficher, vitesse);
         } else {
-            container.textContent += "\n";
-            indexMot++;
-            indexLettre = 0;
-            setTimeout(afficher, pauseEntreMots);
+          container.textContent += "\n";
+          indexMot++;
+          indexLettre = 0;
+          setTimeout(afficher, pauseEntreMots);
         }
+      }
+
+      afficher();
     }
 
-    afficher();
-}
-
-afficherTableauLettreParLettre(fakeWords, wordsText);
+    afficherTableauLettreParLettre(fakeWords, wordsText);
   }, 500);
 
   let statusInterval = setInterval(() => {
@@ -82,15 +84,19 @@ afficherTableauLettreParLettre(fakeWords, wordsText);
       showResult();
     }
   }, 200);
-}); 
+});
 
 function showResult() {
+  select.classList.remove("hidden");
+  startBtn.classList.remove("hidden");
   loader.classList.add("hidden");
-  result.classList.remove("hidden"); 
+  result.classList.remove("hidden");
 
-  const select = document.getElementById('select') as HTMLSelectElement;
   const today = select.options[select.selectedIndex].text;
-  const tomorrow = Number(select.value) === 6 ?'Dimanche':select.options[select.selectedIndex + 1].text;
+  const tomorrow =
+    Number(select.value) === 6
+      ? "Dimanche"
+      : select.options[select.selectedIndex + 1].text;
 
   result.innerHTML = `
     <p>Jour actuel : <strong>${today}</strong></p>
