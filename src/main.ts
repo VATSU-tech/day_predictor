@@ -124,4 +124,6 @@ resetBtn.addEventListener("click", () => {
   document.querySelector<HTMLParagraphElement>('.subtitle')!.classList.remove('hidden')
   document.querySelector<HTMLHeadingElement>('h1')!.textContent = "Predire de nouveau le jour suivant"
   document.querySelector<HTMLParagraphElement>('.subtitle')!.textContent = "Choisir le jour de reference"
-});
+}); 
+
+select.selectedIndex = new Date().getDay()
