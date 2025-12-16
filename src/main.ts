@@ -38,7 +38,7 @@ startBtn.addEventListener("click", () => {
   resetBtn.classList.add("hidden");
 
   document.querySelector<HTMLHeadingElement>('h1')!.textContent = "Prédiction en cours..."
-  document.querySelector<HTMLParagraphElement>('.subtitle')!.textContent = "Patienter pendant la connexion au serveur dela NASA"
+  document.querySelector<HTMLParagraphElement>('.subtitle')!.textContent = "Patienter pendant la connexion au serveur dela NASA..."
 
   let statusIndex = 0;
   let wordInterval = setInterval(() => {
@@ -99,6 +99,9 @@ function showResult() {
   result.classList.remove("hidden");
   resetBtn.classList.remove("hidden");
 
+  document.querySelector<HTMLHeadingElement>('h1')!.classList.add('hidden')
+  document.querySelector<HTMLParagraphElement>('.subtitle')!.classList.add('hidden')
+
   const today = select.options[select.selectedIndex].text;
   const tomorrow =
     Number(select.value) === 6
@@ -117,4 +120,8 @@ resetBtn.addEventListener("click", () => {
   startBtn.classList.remove("hidden");
   result.classList.add("hidden");
   resetBtn.classList.add("hidden");
+  document.querySelector<HTMLHeadingElement>('h1')!.classList.remove('hidden')
+  document.querySelector<HTMLParagraphElement>('.subtitle')!.classList.remove('hidden')
+  document.querySelector<HTMLHeadingElement>('h1')!.textContent = "Predire de nouveau le jour suivant"
+  document.querySelector<HTMLParagraphElement>('.subtitle')!.textContent = "Choisir le jour de reference"
 });
