@@ -109,8 +109,8 @@ function showResult() {
       : select.options[select.selectedIndex + 1].text;
 
   result.innerHTML = `
-    <p>Jour actuel : <strong>${today}</strong></p>
-    <p>Jour prédit : <strong>${tomorrow}</strong></p>
+    <p>Jour selectionner : <strong>${today}</strong></p>
+    <p>Jour suivant : <strong>${tomorrow}</strong></p>
     <p class="note">Prédiction validée par simulation temporelle.</p>
   `;
 }
