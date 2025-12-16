@@ -9,6 +9,7 @@
     <!-- <link rel="stylesheet" href="src/tailwind.css"> -->
     <title>Day predictor</title>
   </head>
+  <!-- <style>@import "tailwindcss";</style> -->
   <body>
     <div class="container">
       <h1>Predire le jour suivant</h1>
@@ -21,9 +22,10 @@
         <option value="3">Mercredi</option>
         <option value="4">Jeudi</option>
         <option value="5">Vendredi</option>
-        <option value="6" selected>Samedi</option>
+        <option value="6">Samedi</option>
       </select>
       <button id="startBtn">Lancer la prédiction</button>
+      <button id="resetBtn" class="hidden">Reinitialiser</button>
 
       <div id="loader" class="hidden">
         <div class="spinner"></div>

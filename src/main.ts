@@ -4,6 +4,7 @@ const loader = document.getElementById("loader") as HTMLDivElement;
 const statusText = document.getElementById("status") as HTMLParagraphElement;
 const wordsText = document.getElementById("words") as HTMLParagraphElement;
 const result = document.getElementById("result") as HTMLDivElement;
+const resetBtn = document.getElementById("resetBtn") as HTMLButtonElement;
 
 const fakeStatuses = [
   "Connexion au réseau satellite NASA...",
@@ -34,11 +35,12 @@ startBtn.addEventListener("click", () => {
   startBtn.classList.add("hidden");
   result.classList.add("hidden");
   loader.classList.remove("hidden");
+  resetBtn.classList.add("hidden");
 
   let statusIndex = 0;
   let wordInterval = setInterval(() => {
-  const randomWord = fakeWords[Math.floor(Math.random() * fakeWords.length)];
-  wordsText.innerHTML += `<span>${randomWord}</span>`;
+    const randomWord = fakeWords[Math.floor(Math.random() * fakeWords.length)];
+    wordsText.innerHTML += `<span>${randomWord}</span>`;
     // function afficherTableauLettreParLettre(
     //   elements: string[],
     //   container: HTMLElement,
@@ -84,14 +86,15 @@ startBtn.addEventListener("click", () => {
       clearInterval(wordInterval);
       showResult();
     }
-  }, 2000);
+  }, 200);
 });
 
 function showResult() {
-  select.classList.remove("hidden");
-  startBtn.classList.remove("hidden");
+  select.classList.add("hidden");
+  startBtn.classList.add("hidden");
   loader.classList.add("hidden");
   result.classList.remove("hidden");
+  resetBtn.classList.remove("hidden");
 
   const today = select.options[select.selectedIndex].text;
   const tomorrow =
@@ -105,3 +108,10 @@ function showResult() {
     <p class="note">Prédiction validée par simulation temporelle.</p>
   `;
 }
+
+resetBtn.addEventListener("click", () => {
+  select.classList.remove("hidden");
+  startBtn.classList.remove("hidden");
+  result.classList.add("hidden");
+  resetBtn.classList.add("hidden");
+});
