@@ -22,7 +22,7 @@ const fakeStatuses = [
 const fakeWords = [
   "ENCRYPTION_AES256",
   "QUANTUM_NODE",
-  "TIME_VECTOR",
+  "TIME_VECTOR", 
   "ORBITAL_SYNC",
   "NEURAL_HASH",
   "TEMPORAL_KEY",
