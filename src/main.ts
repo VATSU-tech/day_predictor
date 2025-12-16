@@ -78,7 +78,7 @@ startBtn.addEventListener("click", () => {
     // }
 
     // afficherTableauLettreParLettre(fakeWords, wordsText);
-  }, 300);
+  }, 350);
 
   let statusInterval = setInterval(() => {
     if (statusIndex < fakeStatuses.length) {
@@ -124,6 +124,7 @@ resetBtn.addEventListener("click", () => {
   document.querySelector<HTMLParagraphElement>('.subtitle')!.classList.remove('hidden')
   document.querySelector<HTMLHeadingElement>('h1')!.textContent = "Predire de nouveau le jour suivant"
   document.querySelector<HTMLParagraphElement>('.subtitle')!.textContent = "Choisir le jour de reference"
+  wordsText.textContent = ""
 }); 
 
 select.selectedIndex = new Date().getDay()
