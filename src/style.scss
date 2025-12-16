@@ -164,12 +164,15 @@ button:hover,select:hover {
 }
 
 #words {
+  white-space: pre-line;
   display: flex;
   width: 80%;
   flex-wrap: wrap;
   font-size: 0.8rem;
   color: #ff3e7f;
   width: 80%; 
+  height: 100px;
+  overflow-y: scroll;
   text-wrap: wrap;
 }
 
