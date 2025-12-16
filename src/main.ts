@@ -32,47 +32,48 @@ const fakeWords = [
 startBtn.addEventListener("click", () => {
   select.classList.add("hidden");
   startBtn.classList.add("hidden");
+  result.classList.add("hidden");
   loader.classList.remove("hidden");
 
   let statusIndex = 0;
   let wordInterval = setInterval(() => {
-    // const randomWord = fakeWords[Math.floor(Math.random() * fakeWords.length)];
-    // wordsText.innerHTML += `<span>${randomWord}</span>`;
-    function afficherTableauLettreParLettre(
-      elements: string[],
-      container: HTMLElement,
-      vitesse: number = 100,
-      pauseEntreMots: number = 800
-    ): void {
-      let indexMot = 0;
-      let indexLettre = 0;
+  const randomWord = fakeWords[Math.floor(Math.random() * fakeWords.length)];
+  wordsText.innerHTML += `<span>${randomWord}</span>`;
+    // function afficherTableauLettreParLettre(
+    //   elements: string[],
+    //   container: HTMLElement,
+    //   vitesse: number = 100,
+    //   pauseEntreMots: number = 800
+    // ): void {
+    //   let indexMot = 0;
+    //   let indexLettre = 0;
 
-      container.textContent = "";
+    //   container.textContent = "";
 
-      function afficher(): void {
-        if (indexMot >= elements.length) {
-          return;
-        }
+    //   function afficher(): void {
+    //     if (indexMot >= elements.length) {
+    //       return;
+    //     }
 
-        const motActuel = elements[indexMot];
+    //     const motActuel = elements[indexMot];
 
-        if (indexLettre < motActuel.length) {
-          container.textContent += motActuel[indexLettre];
-          indexLettre++;
-          setTimeout(afficher, vitesse);
-        } else {
-          container.textContent += "\n";
-          indexMot++;
-          indexLettre = 0;
-          setTimeout(afficher, pauseEntreMots);
-        }
-      }
+    //     if (indexLettre < motActuel.length) {
+    //       container.textContent += motActuel[indexLettre];
+    //       indexLettre++;
+    //       setTimeout(afficher, vitesse);
+    //     } else {
+    //       container.textContent += "\n";
+    //       indexMot++;
+    //       indexLettre = 0;
+    //       setTimeout(afficher, pauseEntreMots);
+    //     }
+    //   }
 
-      afficher();
-    }
+    //   afficher();
+    // }
 
-    afficherTableauLettreParLettre(fakeWords, wordsText);
-  }, 500);
+    // afficherTableauLettreParLettre(fakeWords, wordsText);
+  }, 300);
 
   let statusInterval = setInterval(() => {
     if (statusIndex < fakeStatuses.length) {
@@ -83,7 +84,7 @@ startBtn.addEventListener("click", () => {
       clearInterval(wordInterval);
       showResult();
     }
-  }, 200);
+  }, 2000);
 });
 
 function showResult() {

@@ -1,6 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css");
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
-  font-family: Consolas, monospace;
+  font-family: "Nunito Sans", monospace;
 }
 
 body {
@@ -8,6 +12,7 @@ body {
   color: #00e5ff;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
@@ -33,7 +38,8 @@ h1 {
   margin-bottom: 20px;
 }
 
-button, select {
+button,
+select {
   background: #00e5ff;
   color: #050b1e;
   border: none;
@@ -45,7 +51,8 @@ button, select {
   outline: none;
 }
 
-button:hover, select:hover {
+button:hover,
+select:hover {
   background: #00ffa8;
 }
 
@@ -77,12 +84,14 @@ button:hover, select:hover {
 }
 
 #words {
+  white-space: pre-line;
   display: flex;
   width: 80%;
   flex-wrap: wrap;
   font-size: 0.8rem;
   color: #ff3e7f;
   width: 80%;
+  height: 100px;
   text-wrap: wrap;
 }
 
@@ -90,6 +99,49 @@ button:hover, select:hover {
   margin-top: 25px;
   font-size: 1.2rem;
   color: #00ffa8;
+}
+
+footer a {
+  text-decoration: none;
+  color: #00e5ff;
+  position: absolute;
+  bottom: 20px;
+  font-size: 0.5rem;
+  left: 48%;
+  animation: bounce 5s ease infinite forwards;
+  transition: all 1s;
+}
+footer a::after {
+  content: "";
+  opacity: 0;
+  transition: 4s cubic-bezier(0.215, 3, 0.355, 1);
+}
+footer a:hover {
+  font-size: 0.7rem;
+  transform: scale(1.3);
+  cursor: pointer;
+}
+footer a:hover::after {
+  opacity: 1;
+  content: "acceder au code source";
+  background-color: #00e5ff;
+  color: #050b1e;
+  width: 11rem;
+  padding: 0.5rem;
+  transform: none;
+  position: absolute;
+  bottom: 110%;
+  border-radius: 0.5rem;
+  left: 10%;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
