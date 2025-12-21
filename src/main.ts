@@ -78,7 +78,7 @@ startBtn.addEventListener("click", () => {
     // }
 
     // afficherTableauLettreParLettre(fakeWords, wordsText);
-  }, 350);
+  }, 300);
 
   let statusInterval = setInterval(() => {
     if (statusIndex < fakeStatuses.length) {
@@ -89,7 +89,7 @@ startBtn.addEventListener("click", () => {
       clearInterval(wordInterval);
       showResult();
     }
-  }, 2000);
+  }, 1500);
 });
 
 function showResult() {
@@ -124,11 +124,8 @@ resetBtn.addEventListener("click", () => {
   document.querySelector<HTMLParagraphElement>('.subtitle')!.classList.remove('hidden')
   document.querySelector<HTMLHeadingElement>('h1')!.textContent = "Predire de nouveau le jour suivant"
   document.querySelector<HTMLParagraphElement>('.subtitle')!.textContent = "Choisir le jour de reference"
-<<<<<<< HEAD
   wordsText.textContent = ""
 }); 
 
 select.selectedIndex = new Date().getDay()
-=======
-});
->>>>>>> parent of 67f39ce (feat: Initialize day selector to current day, bump version to 0.1.1)
+// });
