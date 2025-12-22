@@ -5,6 +5,7 @@
     "theme_color":"white",
     "orientation":"portrait-primary",
     "start_url":"/",
+    "description":"Application pour predire de jour qui suit celui selectionner",
     "icons":[
         {
             "src":"/public/icons/dice_dark_32x32.png",
