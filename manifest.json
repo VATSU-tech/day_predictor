@@ -1,0 +1,7 @@
+{
+    "name":"Day predictor",
+    "short_name" : "DP",
+    "background_color" : "white",
+    "theme_color":"white",
+    "orientation":"portrait-primary"
+}
