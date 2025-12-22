@@ -3,5 +3,13 @@
     "short_name" : "DP",
     "background_color" : "white",
     "theme_color":"white",
-    "orientation":"portrait-primary"
+    "orientation":"portrait-primary",
+    "start_url":"/",
+    "icons":[
+        {
+            "src":"/public/icons/dice_dark_32x32.png",
+            "type":"image/png",
+            "sizes":"32x32"
+        }
+    ]
 }
