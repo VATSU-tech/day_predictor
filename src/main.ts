@@ -31,11 +31,12 @@ const fakeWords = [
 ];
 
 startBtn.addEventListener("click", () => {
+  wordsText.textContent = ""
   select.classList.add("hidden");
-  startBtn.classList.add("hidden");
   result.classList.add("hidden");
-  loader.classList.remove("hidden");
   resetBtn.classList.add("hidden");
+  startBtn.classList.add("hidden");
+  loader.classList.remove("hidden");
 
   document.querySelector<HTMLHeadingElement>('h1')!.textContent = "Prédiction en cours..."
   document.querySelector<HTMLParagraphElement>('.subtitle')!.textContent = "Patienter pendant la connexion au serveur..."
@@ -124,7 +125,6 @@ resetBtn.addEventListener("click", () => {
   document.querySelector<HTMLParagraphElement>('.subtitle')!.classList.remove('hidden')
   document.querySelector<HTMLHeadingElement>('h1')!.textContent = "Predire de nouveau le jour suivant"
   document.querySelector<HTMLParagraphElement>('.subtitle')!.textContent = "Choisir le jour de reference"
-  wordsText.textContent = ""
 }); 
 
 select.selectedIndex = new Date().getDay()
