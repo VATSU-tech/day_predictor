@@ -21,4 +21,9 @@ export const root = document.querySelector<HTMLDivElement>('#root')!.innerHTML=`
           <p id="words"></p>
         </div>
       </div>
-      <footer><a href="https://github.com/VATSU-tech/day_predictor.git" target="_blank" rel="noopenner"><i class="fa-brands fa-github"></i> VATSU-tech</a></footer>`
+      <footer>
+        <a href="https://github.com/VATSU-tech/day_predictor.git" target="_blank" rel="noopenner">
+          <i class="fa-brands fa-github"></i>
+          VATSU-tech
+        </a>
+      </footer>`

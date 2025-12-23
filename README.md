@@ -18,7 +18,7 @@ Ce projet n'est pas une simple application web. C'est un **chef-d'œuvre d'ingé
 ## Fonctionnalités Incroyables
 
 - **Prédiction à 100% de précision** : Notre algorithme propriétaire a été testé sur des millénaires. Si nous sommes lundi, il *sait* que demain sera mardi. C'est presque magique.
-- **Interface Hacker-Futuriste** : Regardez des barres de chargement tourner et des mots compliqués comme `ENCRYPTION_AES256` défiler pour vous donner l'impression que votre ordinateur fait quelque chose de difficile.
+- **Interface Hacker-Futuriste** : Regardez des barres de chargement tourner et des mots compliqués comme `ENCRYPTION_AES256` ou encore `QUANTUM_NODE` défiler pour vous donner l'impression que votre ordinateur fait quelque chose de difficile.
 - **Sélecteur Ergonomique** : Choisissez votre jour actuel avec un menu déroulant. La pointe de l'UX.
 
 ## Installation & Démarrage
