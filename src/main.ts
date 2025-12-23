@@ -1,11 +1,5 @@
 import './page'
-const select = document.getElementById("select") as HTMLSelectElement;
-const startBtn = document.getElementById("startBtn") as HTMLButtonElement;
-const loader = document.getElementById("loader") as HTMLDivElement;
-const statusText = document.getElementById("status") as HTMLParagraphElement;
-const wordsText = document.getElementById("words") as HTMLParagraphElement;
-const result = document.getElementById("result") as HTMLDivElement;
-const resetBtn = document.getElementById("resetBtn") as HTMLButtonElement;
+import { loader, resetBtn, result, select, startBtn, statusText, wordsText } from './dom';
 
 const fakeStatuses = [
   "Connexion au réseau satellite NASA...",
