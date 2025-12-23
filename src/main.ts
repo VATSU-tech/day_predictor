@@ -101,10 +101,7 @@ function showResult() {
   document.querySelector<HTMLParagraphElement>('.subtitle')!.classList.add('hidden')
 
   const today = select.options[select.selectedIndex].text;
-  const tomorrow =
-    Number(select.value) === 6
-      ? "Dimanche"
-      : select.options[select.selectedIndex + 1].text;
+  const tomorrow = Number(select.value) === 6 ? "Dimanche" : select.options[select.selectedIndex + 1].text;
 
   result.innerHTML = `
     <p>Jour selectionner : <strong>${today}</strong></p>

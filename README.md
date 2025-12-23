@@ -7,7 +7,7 @@ Avez-vous déjà eu peur de vous réveiller un mardi en pensant que c'était dim
 
 **Ne cherchez plus.** Le **Day Predictor** est là.
 
-## 🚀 Technologie Révolutionnaire
+## Technologie Révolutionnaire
 
 Ce projet n'est pas une simple application web. C'est un **chef-d'œuvre d'ingénierie over-engineered** qui utilise la puissance combinée de :
 
@@ -15,13 +15,13 @@ Ce projet n'est pas une simple application web. C'est un **chef-d'œuvre d'ingé
 - **Algorithmes Quantiques** pour décrypter la structure même de l'espace-temps.
 - **Intelligence Artificielle de niveau 0** (littéralement, un `if/else`).
 
-## ✨ Fonctionnalités Incroyables
+## Fonctionnalités Incroyables
 
 - **Prédiction à 100% de précision** : Notre algorithme propriétaire a été testé sur des millénaires. Si nous sommes lundi, il *sait* que demain sera mardi. C'est presque magique.
 - **Interface Hacker-Futuriste** : Regardez des barres de chargement tourner et des mots compliqués comme `ENCRYPTION_AES256` défiler pour vous donner l'impression que votre ordinateur fait quelque chose de difficile.
 - **Sélecteur Ergonomique** : Choisissez votre jour actuel avec un menu déroulant. La pointe de l'UX.
 
-## 🛠️ Installation & Démarrage
+## Installation & Démarrage
 
 Attention, manipuler le temps demande des précautions.
 
@@ -34,9 +34,13 @@ Attention, manipuler le temps demande des précautions.
    ```bash
    npm run dev
    ```
-4. Ouvrez votre navigateur et préparez-vous à être ébloui.
+4. Demarer la compilation du style quantique:
+   ```bach
+   npm run sass
+   ```
+5. Ouvrez votre navigateur et préparez-vous à être ébloui.
 
-## ⚠️ Avertissement
+## Avertissement
 
 ***L'auteur décline toute responsabilité si l'application prédit "Lundi" deux fois de suite. Cela signifierait que vous êtes bloqué dans une boucle temporelle. Dans ce cas, contactez un Docteur (celui avec le tournevis sonique).***
 
