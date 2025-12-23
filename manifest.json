@@ -2,9 +2,10 @@
     "name":"Day predictor",
     "short_name" : "DP",
     "background_color" : "white",
-    "theme_color":"white",
+    "theme_color":"white", 
     "orientation":"portrait-primary",
-    "start_url":"/",
+    "start_url":"/index.html",
+    "display":"standalone",
     "description":"Application pour predire de jour qui suit celui selectionner",
     "icons":[
         {
